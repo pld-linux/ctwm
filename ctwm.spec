@@ -7,7 +7,7 @@ Group: X11/Window Managers
 Source: ftp://slhp1.epfl.ch/pub/ctwm-3.5.tar.gz
 Patch: ctwm-3.5beta1.patch
 Patch1: ctwm-3.5-3.5.1.diffs
-BuildRoot: /var/tmp/ctwm-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 CTWM is an extension to twm, that support multiple virtual screens,
