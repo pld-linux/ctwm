@@ -1,0 +1,17 @@
+--- Imakefile.orig	Tue Sep 17 00:17:10 2002
++++ Imakefile	Tue Sep 17 00:18:25 2002
+@@ -145,14 +145,6 @@
+ NormalLibraryTarget(ctwm, libctwm.o)
+ ComplexProgramTarget(ctwm)
+ InstallNonExecFile(system.ctwmrc,$(TWMDIR))
+-#ifdef XPM
+-install:: xpm
+-	MakeDir($(DESTDIR)$(LIBDIR)/ctwm/images)
+-	@case '${MFLAGS}' in *[i]*) set +e;; esac; \
+-	for i in xpm/?* ; do \
+-		(set -x; $(INSTALL) -c $(INSTLIBFLAGS) $$i $(DESTDIR)$(LIBDIR)/ctwm/images); \
+-	done
+-#endif
+ 
+ gram.h gram.c: gram.y
+ 	$(YACC) $(YFLAGS) gram.y
