@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=ctwm
+Name=Ctwm
 Comment=CTWM - an extention to the twm window manager
-Comment[pl]=CTWM - rozszerzenie do zarz±dcy okien twm
+Comment[pl]=CTWM - rozszerzenie do zarzÄ…dcy okien twm
 
 Exec=twm
 TryExec=twm
