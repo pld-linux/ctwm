@@ -28,7 +28,7 @@ CTWM jest rozszerzeniem twm obs³uguj±cym wiele ekranów wirtualnych
 oraz posiadaj±cycm wiele innych u¿ytecznych funkcji. Mo¿na u¿ywaæ i
 zarz±dzaæ nawet 32 ekranami wirtualnymi zwanymi "przestrzeni± robocz±"
 (workspace). Mo¿na siê miêdzy nimi prze³±czaæ klikaj±c na przycisku w
-opcjonalnym panelu (mened¿erze przestrzeni roboczej) lub wywo³uj±c
+opcjonalnym panelu (zarz±dcy przestrzeni roboczej) lub wywo³uj±c
 funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 5.0/TurboLinux 2.0 i wy¿sze).
 
