@@ -10,6 +10,8 @@ Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
 Source0:	http://ctwm.dl.nu/%{name}-%{version}.tar.gz
+Patch0:		ctwm-pld-dir.patch
+BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -34,17 +36,19 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 
 %prep
 %setup -q
+%patch -p1
 
 xmkmf
 
 %build
-%{__make} CDEBUGFLAGS="%{rpmcflags}" CXXDEBUGFLAGS="%{rpmcflags}"
+%{__make} CDEBUGFLAGS="%{rpmcflags}" CXXDEBUGFLAGS="%{rpmcflags}" PIXDIR=/etc/X11/
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/X11/twm/images} \
+install -d $RPM_BUILD_ROOT%{_bindir} \
 	$RPM_BUILD_ROOT%{_mandir}/man1 \
-	$RPM_BUILD_ROOT%{_sysconfdir}/X11/ctwm
+	$RPM_BUILD_ROOT%{_sysconfdir}/X11/twm \
+	$RPM_BUILD_ROOT%{_libdir}/X11/ctwm
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 %{__make} DESTDIR=$RPM_BUILD_ROOT install.man
@@ -54,9 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES PROBLEMS README ctwm.txt vms.txt vms2.txt sound.doc
-%config %{_sysconfdir}/X11/ctwm/system.ctwmrc
+%doc CHANGES PROBLEMS README ctwm.txt sound.doc
+%config %{_sysconfdir}/X11/twm/system.ctwmrc
 
 %attr(755,root,root) %{_bindir}/ctwm
 %{_mandir}/man1/*
-%{_libdir}/X11/twm/images
+%{_libdir}/X11/ctwm/images
