@@ -1,13 +1,15 @@
 Summary:	CTWM - an extention to the twm window manager
 Summary(pl):	CTWM - rozszerzenie do zarz±dcy okien twm
 Name:		ctwm
-Version:	3.5.2
+Version:	3.6
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Source0:	http://ctwm.dl.nu/dist/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-pld-dir.patch
+Patch1:		%{name}-gram.patch
+Patch2:		%{name}-noxpm.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +36,9 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
+%patch2 -p0
 
 xmkmf
 
