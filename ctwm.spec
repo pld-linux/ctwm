@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Source0:	http://ctwm.dl.nu/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	c9e9e161e07e3d1c7e27684436f01e2b
 Source1:	%{name}.desktop
 Patch0:		%{name}-pld-dir.patch
 BuildRequires:	XFree86-devel
