@@ -3,7 +3,7 @@ Summary(pl):	CTWM - rozszerzenie do zarz±dcy okien twm
 Name:		ctwm
 Version:	3.6
 Release:	1
-License:	GPL
+License:	MIT
 Group:		X11/Window Managers
 Source0:	http://ctwm.free.lp.se/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	c9e9e161e07e3d1c7e27684436f01e2b
