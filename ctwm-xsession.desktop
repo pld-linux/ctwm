@@ -6,5 +6,6 @@ TryExec=ctwm
 Name=CTWM
 Comment=Claude's Tab Window Manager, TWM enhanced by virtual screens, etc.
 Comment[nl]=Claude's Tab Window Manager, TWM uitgebreid met virtuele schermen etc.
-Comment[sr]=„Claude's Tab Window Manager“, TWM побољшан виртуелним екранима и сл.
+Comment[sr]=Claude's Tab Window Manager, TWM побољшан виртуелним екранима и сл.
 Comment[sv]=Claudes fönsterhanterare med flikar, TWM förbättrad med virtuella skärmar, etc.
+# vi: encoding=utf-8
