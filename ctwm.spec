@@ -5,7 +5,7 @@ Version:	3.5.2
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
-Source0:	http://ctwm.dl.nu/%{name}-%{version}.tar.gz
+Source0:	http://ctwm.dl.nu/dist/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-pld-dir.patch
 BuildRequires:	XFree86-devel
