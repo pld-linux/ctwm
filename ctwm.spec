@@ -1,17 +1,15 @@
 Summary:	CTWM - an extention to the twm window manager
 Summary(pl):	CTWM - rozszerzenie do zarz±dcy okien twm
 Name:		ctwm
-Version:	3.5.1
-Release:	1TL
+Version:	3.5.2
+Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
-Source0:	ftp://slhp1.epfl.ch/pub/%{name}-3.5.tar.gz
-Patch0:		%{name}-3.5beta1.patch
-Patch1:		%{name}-3.5-3.5.1.diffs
+Source0:	http://ctwm.dl.nu/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,9 +33,7 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 5.0/TurboLinux 2.0 i wy¿sze).
 
 %prep
-%setup -q -n ctwm-3.5
-%patch1 -p1 -b .351
-%patch -p1
+%setup -q
 
 xmkmf
 
@@ -46,7 +42,7 @@ xmkmf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/X11/twm/images \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/X11/twm/images} \
 	$RPM_BUILD_ROOT%{_mandir}/man1 \
 	$RPM_BUILD_ROOT%{_sysconfdir}/X11/ctwm
 
@@ -58,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES PROBLEMS README README.VMS vms.txt sound.doc
+%doc CHANGES PROBLEMS README ctwm.txt vms.txt vms2.txt sound.doc
 %config %{_sysconfdir}/X11/ctwm/system.ctwmrc
 
 %attr(755,root,root) %{_bindir}/ctwm
