@@ -51,8 +51,10 @@ install -d $RPM_BUILD_ROOT%{_bindir} \
 	$RPM_BUILD_ROOT%{_libdir}/X11/ctwm \
 	$RPM_BUILD_ROOT%{_wmpropsdir}
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
-%{__make} DESTDIR=$RPM_BUILD_ROOT install.man
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+%{__make} install.man \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
 
@@ -63,8 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES PROBLEMS README ctwm.txt sound.doc
 %config /etc/X11/twm/system.ctwmrc
-%{_wmpropsdir}/ctwm.desktop
-
 %attr(755,root,root) %{_bindir}/ctwm
-%{_mandir}/man1/*
 %{_libdir}/X11/ctwm
+%{_wmpropsdir}/ctwm.desktop
+%{_mandir}/man1/*
