@@ -57,14 +57,12 @@ install -d $RPM_BUILD_ROOT%{_bindir} \
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
 
-gzip -9nf CHANGES PROBLEMS README ctwm.txt sound.doc
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc CHANGES PROBLEMS README ctwm.txt sound.doc
 %config /etc/X11/twm/system.ctwmrc
 %{_wmpropsdir}/ctwm.desktop
 
