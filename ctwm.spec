@@ -5,13 +5,18 @@ Version:	3.6
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
-Source0:	http://ctwm.dl.nu/dist/%{name}-%{version}.tar.gz
+Source0:	http://ctwm.free.lp.se/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	c9e9e161e07e3d1c7e27684436f01e2b
 Source1:	%{name}.desktop
 Patch0:		%{name}-pld-dir.patch
+Patch1:		%{name}-bison.patch
+URL:		http://ctwm.free.lp.se/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# NOTE: if prefix==/usr, %{_libdir}/X11 must not be used
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 %define		_wmpropsdir	/usr/share/wm-properties
 
 %description
@@ -33,7 +38,8 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 xmkmf
