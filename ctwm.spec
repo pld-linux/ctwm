@@ -10,12 +10,14 @@ Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
 Source0:	http://ctwm.dl.nu/%{name}-%{version}.tar.gz
-Patch0:		ctwm-pld-dir.patch
+Source1:	%{name}.desktop
+Patch0:		%{name}-pld-dir.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_wmpropsdir	%{_datadir}/wm-properties
 
 %description
 CTWM is an extension to twm, that support multiple virtual screens,
@@ -41,26 +43,35 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 xmkmf
 
 %build
-%{__make} CDEBUGFLAGS="%{rpmcflags}" CXXDEBUGFLAGS="%{rpmcflags}" PIXDIR=/etc/X11/
+%{__make} \
+	CDEBUGFLAGS="%{rpmcflags}" \
+	CXXDEBUGFLAGS="%{rpmcflags}" \
+	PIXDIR=/etc/X11/
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir} \
 	$RPM_BUILD_ROOT%{_mandir}/man1 \
-	$RPM_BUILD_ROOT%{_sysconfdir}/X11/twm \
-	$RPM_BUILD_ROOT%{_libdir}/X11/ctwm
+	$RPM_BUILD_ROOT/etc/X11/twm \
+	$RPM_BUILD_ROOT%{_libdir}/X11/ctwm \
+	$RPM_BUILD_ROOT%{_wmpropsdir}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 %{__make} DESTDIR=$RPM_BUILD_ROOT install.man
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
+
+gzip -9nf CHANGES PROBLEMS README ctwm.txt sound.doc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES PROBLEMS README ctwm.txt sound.doc
-%config %{_sysconfdir}/X11/twm/system.ctwmrc
+%doc *.gz
+%config /etc/X11/twm/system.ctwmrc
+%{_wmpropsdir}/ctwm.desktop
 
 %attr(755,root,root) %{_bindir}/ctwm
 %{_mandir}/man1/*
-%{_libdir}/X11/ctwm/images
+%{_libdir}/X11/ctwm
