@@ -1,0 +1,11 @@
+--- ctwm-3.6/gram.y.orig	Tue Sep 17 00:03:37 2002
++++ ctwm-3.6/gram.y	Tue Sep 17 00:03:37 2002
+@@ -683,7 +683,7 @@
+ 		| wingeom_entries wingeom_entry
+ 		;
+ 
+-wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2) }
++wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2); }
+ 
+ 
+ 
