@@ -40,7 +40,7 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 xmkmf
 
 %build
-make CDEBUGFLAGS="$RPM_OPT_FLAGS" CXXDEBUGFLAGS="$RPM_OPT_FLAGS"
+%{__make} CDEBUGFLAGS="$RPM_OPT_FLAGS" CXXDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -48,8 +48,8 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/X11/twm/images \
 	$RPM_BUILD_ROOT%{_mandir}/man1 \
 	$RPM_BUILD_ROOT%{_sysconfdir}/X11/ctwm
 
-make DESTDIR=$RPM_BUILD_ROOT install
-make DESTDIR=$RPM_BUILD_ROOT install.man
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} DESTDIR=$RPM_BUILD_ROOT install.man
 
 %clean
 rm -rf $RPM_BUILD_ROOT
