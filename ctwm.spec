@@ -11,7 +11,7 @@ Patch0:		%{name}-pld-dir.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_wmpropsdir	%{_datadir}/wm-properties
+%define		_wmpropsdir	/usr/share/wm-properties
 
 %description
 CTWM is an extension to twm, that support multiple virtual screens,
@@ -34,9 +34,9 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 %setup -q
 %patch -p1
 
+%build
 xmkmf
 
-%build
 %{__make} \
 	CDEBUGFLAGS="%{rpmcflags}" \
 	CXXDEBUGFLAGS="%{rpmcflags}" \
