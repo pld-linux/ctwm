@@ -30,7 +30,7 @@ manager) or by invoking a function. This is the GNU libc version
 
 %description -l pl
 CTWM jest rozszerzeniem twm obs³uguj±cym wiele ekranów wirtualnych
-oraz posiadaj±cycm wiele innych u¿ytecznych funkcji. Mo¿na u¿ywaæ i
+oraz posiadaj±cym wiele innych u¿ytecznych funkcji. Mo¿na u¿ywaæ i
 zarz±dzaæ nawet 32 ekranami wirtualnymi zwanymi "przestrzeni± robocz±"
 (workspace). Mo¿na siê miêdzy nimi prze³±czaæ klikaj±c na przycisku w
 opcjonalnym panelu (zarz±dcy przestrzeni roboczej) lub wywo³uj±c
