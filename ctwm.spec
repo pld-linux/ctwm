@@ -1,15 +1,17 @@
 Summary:	CTWM - an extention to the twm window manager
+Summary(pl):	CTWM - rozszerzenie do zarz±dcy okien twm
 Name:		ctwm
 Version:	3.5.1
 Release:	1TL
 License:	GPL
 Group:		X11/Window Managers
-Group(pl):	X11/Zarz±dcy Okien
+Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
+Group(pl):	X11/Zarz±dcy Okien
 Source0:	ftp://slhp1.epfl.ch/pub/%{name}-3.5.tar.gz
-Patch0:		ctwm-3.5beta1.patch
-Patch1:		ctwm-3.5-3.5.1.diffs
+Patch0:		%{name}-3.5beta1.patch
+Patch1:		%{name}-3.5-3.5.1.diffs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -40,7 +42,7 @@ funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
 xmkmf
 
 %build
-%{__make} CDEBUGFLAGS="$RPM_OPT_FLAGS" CXXDEBUGFLAGS="$RPM_OPT_FLAGS"
+%{__make} CDEBUGFLAGS="%{rpmcflags}" CXXDEBUGFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
