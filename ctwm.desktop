@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ctwm
+Comment=CTWM - an extention to the twm window manager
+Comment[pl]=CTWM - rozszerzenie do zarz±dcy okien twm
+
+Exec=twm
+TryExec=twm
+
+[Window Manager]
+SessionManaged=false
+# vi: encoding=utf-8
