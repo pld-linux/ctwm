@@ -5,10 +5,6 @@ Version:	3.5.2
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Source0:	http://ctwm.dl.nu/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-pld-dir.patch
