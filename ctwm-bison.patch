@@ -1,0 +1,19 @@
+--- ctwm-3.6/gram.y.orig	Tue Dec 11 16:38:52 2001
++++ ctwm-3.6/gram.y	Tue Jul  8 10:02:23 2003
+@@ -419,7 +419,6 @@
+ 		| WINDOW_RING		{ list = &Scr->WindowRingL; }
+ 		  win_list
+ 		| WINDOW_RING           { Scr->WindowRingAll = TRUE; }
+-		;
+ 		| WINDOW_RING_EXCLUDE    { if (!Scr->WindowRingL)
+ 		                              Scr->WindowRingAll = TRUE;
+ 		                          list = &Scr->WindowRingExcludeL; }
+@@ -683,7 +682,7 @@
+ 		| wingeom_entries wingeom_entry
+ 		;
+ 
+-wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2) }
++wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2); }
+ 
+ 
+ 
