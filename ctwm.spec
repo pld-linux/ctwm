@@ -1,5 +1,5 @@
 Summary:	CTWM - an extention to the twm window manager
-Summary(pl.UTF-8):   CTWM - rozszerzenie do zarządcy okien twm
+Summary(pl.UTF-8):	CTWM - rozszerzenie do zarządcy okien twm
 Name:		ctwm
 Version:	3.6
 Release:	1
