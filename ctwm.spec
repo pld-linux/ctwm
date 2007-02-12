@@ -1,5 +1,5 @@
 Summary:	CTWM - an extention to the twm window manager
-Summary(pl):	CTWM - rozszerzenie do zarz±dcy okien twm
+Summary(pl.UTF-8):   CTWM - rozszerzenie do zarzÄ…dcy okien twm
 Name:		ctwm
 Version:	3.6
 Release:	1
@@ -28,14 +28,14 @@ clicking on a button in an optional panel of buttons (the workspace
 manager) or by invoking a function. This is the GNU libc version
 (RedHat 5.0/TurboLinux 2.0 and above).
 
-%description -l pl
-CTWM jest rozszerzeniem twm obs³uguj±cym wiele ekranów wirtualnych
-oraz posiadaj±cym wiele innych u¿ytecznych funkcji. Mo¿na u¿ywaæ i
-zarz±dzaæ nawet 32 ekranami wirtualnymi zwanymi "przestrzeni± robocz±"
-(workspace). Mo¿na siê miêdzy nimi prze³±czaæ klikaj±c na przycisku w
-opcjonalnym panelu (zarz±dcy przestrzeni roboczej) lub wywo³uj±c
-funkcjê. Jest to wersja wspó³pracuj±ca z GNU libc (RedHat
-5.0/TurboLinux 2.0 i wy¿sze).
+%description -l pl.UTF-8
+CTWM jest rozszerzeniem twm obsÅ‚ugujÄ…cym wiele ekranÃ³w wirtualnych
+oraz posiadajÄ…cym wiele innych uÅ¼ytecznych funkcji. MoÅ¼na uÅ¼ywaÄ‡ i
+zarzÄ…dzaÄ‡ nawet 32 ekranami wirtualnymi zwanymi "przestrzeniÄ… roboczÄ…"
+(workspace). MoÅ¼na siÄ™ miÄ™dzy nimi przeÅ‚Ä…czaÄ‡ klikajÄ…c na przycisku w
+opcjonalnym panelu (zarzÄ…dcy przestrzeni roboczej) lub wywoÅ‚ujÄ…c
+funkcjÄ™. Jest to wersja wspÃ³Å‚pracujÄ…ca z GNU libc (RedHat
+5.0/TurboLinux 2.0 i wyÅ¼sze).
 
 %prep
 %setup -q
