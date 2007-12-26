@@ -1,11 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Ctwm
 Comment=CTWM - an extention to the twm window manager
 Comment[pl]=CTWM - rozszerzenie do zarządcy okien twm
 Exec=ctwm
 TryExec=ctwm
-
 [Window Manager]
 SessionManaged=false
 # vi: encoding=utf-8
