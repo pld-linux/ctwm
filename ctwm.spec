@@ -2,7 +2,7 @@ Summary:	CTWM - an extention to the twm window manager
 Summary(pl.UTF-8):	CTWM - rozszerzenie do zarządcy okien twm
 Name:		ctwm
 Version:	3.6
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Window Managers
 Source0:	http://ctwm.free.lp.se/dist/%{name}-%{version}.tar.gz
@@ -13,12 +13,13 @@ Patch0:		%{name}-pld-dir.patch
 Patch1:		%{name}-bison.patch
 URL:		http://ctwm.free.lp.se/
 BuildRequires:	XFree86-devel
+Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # NOTE: if prefix==/usr, %{_libdir}/X11 must not be used
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_wmpropsdir	/usr/share/wm-properties
+%define		_wmpropsdir	/usr/share/gnome/wm-properties
 
 %description
 CTWM is an extension to twm, that support multiple virtual screens,
