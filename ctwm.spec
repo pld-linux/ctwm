@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	gnome2		# build with support for GNOME2 wm-properties
+#
 Summary:	CTWM - an extention to the twm window manager
 Summary(pl.UTF-8):	CTWM - rozszerzenie do zarządcy okien twm
 Name:		ctwm
 Version:	3.6
-Release:	2
+Release:	3
 License:	MIT
 Group:		X11/Window Managers
 Source0:	http://ctwm.free.lp.se/dist/%{name}-%{version}.tar.gz
@@ -65,7 +69,7 @@ install -d $RPM_BUILD_ROOT%{_bindir} \
 %{__make} install.man \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
+%{?with_gnome2:install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
 %clean
@@ -77,6 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/X11/twm/system.ctwmrc
 %attr(755,root,root) %{_bindir}/ctwm
 %{_libdir}/X11/ctwm
-%{_wmpropsdir}/ctwm.desktop
+%{?with_gnome2:%{_wmpropsdir}/ctwm.desktop}
 %{_datadir}/xsessions/ctwm.desktop
 %{_mandir}/man1/*
